@@ -1,0 +1,354 @@
+Oracle Apex is a low code developmment tool
+Single database will have multiple workspace and can access across the workspace
+
+===============================
+1. What is Oracle Apex?
+Answer: Oracle Apex is a free web development tool. Apex runs on PL/SQL inside the web browser. 
+Apex is a runtime environment. It is used to code web apps. User-specific with user ID log into Apex and run the apps from the menu. 
+We can create reports, forms & charts. It is flexible to integrate own javascript code. The outputs can be obtained off the screen 
+as PDF or can be to the screen, Flash, Excel Sheet or into web services via integration process.
+
+The very important and core feature of Oracle Apex is that it is tightly integrated with Oracle Data Base and it has the full capability 
+of web development environment. We have the option for the customization of the theme or we can make use of the basic theme for look & feel of the application.
+
+2. What are the advantages of APEX?
+Answer: The following are the advantages of APEX:
+● There is no requirement of license as it is free.
+● It is used for the building application as it is a fast learning curve for developers and the users.
+● We also have the option of building web applications which are fast and secure with the help of APEX.
+● In this we have a lot of scope for customization of the application as per the requirement of user and the programmer.
+● In this the deployment of application is very simple and easy task as “Import & Export”.
+● Oracle tables are used to store Apex Framework and meta-data which runs on live Oracle DB’s.
+
+3. Who uses APEX?
+Answer: If the person uses the oracle database and he/she wants to build rich web application with the reports, forms, charts, drill downs and dashboards with 
+limited Java experienced developers in a short time frame then the Oracle APEX is the most likely good consideration.
+
+4. How APEX Architecture works?
+Answer: As the APEX is installed on the Oracle database, starting from Oracle 11g it comes pre-installed with the database. 
+It comprises of meta data in tables, pl/sql code and also extensive JavaScript APIs.
+
+Then the URL request from the browser is translated into appropriate APEX PL/SQL call by either Oracle HTTP Server (Apache) with mod_plsql plugin or 
+Embedded PL/SQL Gateway. This is varied by the type of APEX installation on the oracle database. After the processing of data the results are relayed 
+back to browser as HTML. This cycle takes place every time user request or submit a page. Then the application session state is maintained in the database tables.
+
+APEX can be installed in two ways .DBAs are more concerned about it than the developers but this determines how the URL is being translated.
+
+5. What is the cost of APEX and where one can get it?
+Answer: APEX comes pre-installed and it is completely integrated with Oracle Database Express Edition(XE). For all other editions of the Oracle Database, 
+Oracle Application Express comes as a free add-on which can be downloaded and installed. If you chose to “try before you buy”, or since it’s free, “try before you install”, 
+you can also use the hosted APEX Online facility.
+
+This facility allows the user for creating and running complete applications just as he/she would on his/her own equipment.
+
+6. What are the skills required for APEX developers?
+Answer: Basics of PL/SQL & SQL are required for the APEX developers, the added advantage will be to have the skills related to customize look and feel with Javascript, CSS, and HTML.
+
+7. Mention the types of APEX Users?
+Answer: They are divided into 3 they are:
+● Developer.
+● Instance Administrators.
+● Workspace Administrators.
+
+8. Define the support for APEX that exists?
+Answer: Application Express can be defined as the best community for someone to help deliver, develop & make use of the APEX applications. 
+The basic support is from the APEX forum of Oracle Tech Network. We are also able to find out the answers & tips related to development from in & out of Oracle.
+
+9. What kind of activities we can do for apex as apex dba?
+1) setup of apex environment
+2) SSL configuration
+3) USER access
+4) Security modal definition
+5) ad hoc issue and resolution
+6) Patching /Performance
+
+10. What are the platforms that support Oracle Apex?
+The below mentioned supports the Oracle Apex:
+● HP Tru64 UNIX (Compaq / DEC)
+● HP-UX PA –RISC
+● HP-UX Itanium
+● z/Linux
+● Linux x86-64
+● Linux Itanium
+● Microsoft Windows – x64
+● Microsoft Windows – 64 -bit Itanium
+● AIX5L
+● Solaris Operating System – SPARC – 64 bit
+● Solaris x86
+● Microsoft Windows – 32 –bit
+● Mac OS X Server
+● Linux x86
+● Linux on Power
+
+11. What are the considerations which are required for the Static Keyword in Apex?
+Answer: Following are some of the considerations which are required for the Static keyword in Apex.
+● We cannot make an Apex class static.
+● The Static keyword in Apex is only allowed in the outer class.
+● The Static variables in Apex are not exchanged like a View State part.
+● Static block and static variables keep running inside and out in the Apex in which they are made in a class.
+● Static variables are static just to the demand’s extent in the Apex.
+
+12. Can you state some of the uses of APEX?
+Answer:
+
+● It helps in fabricating the proficient looking web applications which are both efficient and secure.
+● It keeps running on and lives in the Oracle database. The Apex framework and metadata are put away in Oracle tables.
+● It is FREE and there is no requirement of authorization in this.
+● It also has quick expectation for learning and adapting to build the application.
+● The application deployment is as simple as ‘Export and Import’ if hardcoded references of values that change between situations are avoided from this.
+● It is having the parcel of extension for customization of use, look and feel.
+● It is adaptable for high client volume. ASKTOM, previous ORACLE METALINK and MANY APPLICATIONS are mainly built utilizing APEX.
+● It can usually be configured for utilizing Oracle SSO and EBS fnd client repository.
+
+13. How one can know what version of apex is installed in system?
+Answer: If we are having access to dba view then we should select comp_name, version, status from dba_registry or schema user.
+
+14. How can the developer know in which version they are working?
+Answer: For checking the version the person needs to check schema name OR should select version_no from apex_release; to check same.
+
+15. If someone forgets admin password, how will he login to apex application?
+Answer: We need to call sql scripts to reset the password @apxchpwd.sql (this is same as alter user username identifies by password).
+
+16. By which user we connect to apex application?
+Answer: apex_public_user
+
+17. Does APEX works with non-Oracle databases?
+Answer: No.
+
+18. How will you validate apex?
+Answer: We can validate the apex by Utlrp.sql  or SQL, exec validate_apex; (If the version of APEX is 2.0 or above) OR SQL & exec validate_htmldb; 
+(If the version of APEX version is prior to 2.0)
+
+19. What is APEX syntax?
+Answer: APEX syntax is defined as the syntax which has different features such as variable declaration for storing the different values in the memory. 
+The queries will be like SOQL that can be used for execution of the queries, loop statements for performing the iterations in performing the operations, 
+flow control statements can be used to control the flow execution whether to start or stop the execution process, DML statements can be used for the manipulation 
+of the data by executing the queries.
+
+20. What does the APEX development environment contain?
+Answer: The Salesforce APEX development environment is having various features and processes to be followed for the successful development of an application and 
+also to set up an edition as per the required entity. The code can be developed either in a local developer edition or a sandbox of Salesforce. As per the standards, 
+the code will usually be developed in the Sandbox and will be deployed into production.
+
+The different operations which will be performed during the development of the code its compilation process, debugging the code, testing the code and also its application, 
+performing the SOQL query execution and its efficiency, color coding, auto-alignment and auto-completion of the build process. The main step of execution of the code in 
+Salesforce will include the login action into the Salesforce sandbox or consoling before performing all these operations.
+
+21. What are the different data types in APEX?
+Answer: The different data types that are available in the APEX language are Primitive Data Type (Integer, Long, Double, Date, DateTime, ID, or Boolean and String), 
+Collections (Lists, Maps, and Sets) and Enum Classes, Interfaces and Objects. The Primitive data type Integer can be any value of a 32-bit number and it will be having 
+some range similar to that of Java programming language. A Boolean data type will be having a true and false value. 
+The Date data type can only store the date value but not the time.
+
+The Primitive data type Long can be any value of a 64-bit number and it will have some range similar to that of Java programming language. The String data type is a set of 
+characters that will be initialized within single quotes. Enum is an abstract kind of data type.
+
+22. What are the different Collections in APEX?
+Answer: The different collection data structures in the APEX are Lists, Maps, and Sets. A List will be having any type of data stored in it such as primitives, collections, 
+different types of complex objects or schema objects. There will also be different types of methods available in the lists for performing different operations such as to 
+retrieve the size of the list, to clear the contents, to get the details of the list and to update, delete and add the records or values into it. 
+The same functionalities also exist for Set and Maps but with different functionalities.
+
+23. What is SOQL in APEX?
+Answer: SOQL is defined as the Salesforce Object Query Language which was designed and developed to work with Salesforce Database.
+
+24. Explain the Security features in APEX?
+Answer: There are various security rules and features in APEX that are enforced while sharing the data or while running the code for the protection of the application 
+features and code. There are various sharing security features which are also to be enforced and different levels of security.
+
+25. How does APEX integrate with the database?
+Answer: Oracle Application Express is defined as purely a database application. The IDE, the menus, and all of the screens we see in APEX are written in PL/SQL. 
+The meta data for all of those screens, reports and menus are getting stored in the relational tables within the database. When we point our browser at the APEX URL, 
+the Oracle HTTP listener (Apache +mod_plsql or the PL/SQL gateway, depending on database version) receives that call and it uses PL/SQL and the meta data stored in 
+database tables for painting the welcome screen.
+
+When we log into APEX then we are using an actual database user ID. This user ID is having association with a role within the database and these roles determine what 
+access the programmer will have. If we are an administrator then we are having access to create users and workspaces.
+
+As a developer we have access for creating new applications. If we are configured as an end-user then we will be able to run one or more applications. 
+Oracle Application Express is integrated with the Oracle Database as no environment is. If we want to extend the basic functionality of APEX, there is no 
+requirement for learning additional languages or link in additional libraries. On the rare occasions we need to extend functionality then we will either 
+use SQL for data access or PL/SQL when there is requirement of the procedural code.
+
+26. What applications come with APEX?
+Answer: The current version of the APEX make allowance to the programmer for downloading pre- packaged applications to us for learning from and/or 
+modify for our own uses. We can currently download it (form Oracle’s Technology site):
+1. Employee Directory Lookup – This is exactly the same what it sounds like.
+2. Ask The Expert – It is the Question and Answer Site ala “asktom”.
+3. Bug Tracker – It is used for logging and tracking bug reports.
+4. Discussion Forum – It is used for threaded chat, user management and more.
+5. Document Library – It is the multi-user document repository (Word, Excel, etc).
+6. Project Issue Tracker – It is used for defining, assigning and reporting project issues.
+7. Online Store – It is used as catalog and shopping cart.
+8. Software Projects – It works as the Project task tracker.
+
+27. Where one can try APEX?
+Answer: As we can sign up for a free account at APEX.ORACLE.COM (Oracle’s hosted Application Express site). When we sign up for an account then we should identify the 
+work area name that we want to use and also identify an administrator. From there we can create applications and also users just as we can do on our own 
+hardware and systems.apex.oracle.com which is not intended for production systems, it is intended for exploration and testing. For additional hosting companies, check out the Oracle.
+
+28. Explain the kind of support that exists for APEX?
+Answer: Application Express has a robust community for helping the programmer in developing, delivering and using the APEX applications. The first point of support would be 
+APEX Forum that is resided on Oracle Technology Network. This forum provides useful tips and answers from many experts both internal and external of Oracle..
+Other sites include:
+THE APEX WIKI – It is termed as the wikipedia for the APEX crowd.
+APEX STUDIO – It is the community created which is applications available for downloading.
+APEX MAILING LIST – Here we can sign up for information and Question & Answers.
+THE ORACLE APEX COMMUNITY LISTING –  This is the list which is growing daily.
+
+29. Explain something about virtual class in the Apex programming?
+Answer: In a domain where the user is leading the protest situated sort of programming then a virtual class is a term alluded to a settled kind of internal class whose limit 
+alongside the part factors can be effortlessly abrogated and furthermore renamed by the alternate sub classes of some other outer class. Virtual classes are defined as 
+something that intently looks similar to the virtual limits of the program.
+
+30. How are APEX Application components stored inside DB?
+Answer: This is first of a 3 part series on embedding files in our APEX application. APEX allows us to embed static web files (CSS, JS, images, etc) into our application. 
+This functionality had removed the need to store the web files on a web server that is required for some applications.
+
+To upload our file into the application we must go to Shared Components & Static Files. Click on the Create button. On the Create page, we can upload a file and either 
+associates the file to a specific application or no application. Files that are in association with a specific application should be having a unique filename within its 
+parent application. It can then be referenced (most likely in a page template) using the #APP_IMAGES# substitution string. Files which are not associated with a specific 
+application are available to all the applications within the workspace and can be referenced (most likely in a page template) using the #WORKSPACE_IMAGES# substitution string. 
+Files which are added to the application aren’t stored on the webserver.
+
+They are stored in the database. For high traffic applications, this may not be a great idea and we may want to look at storing them on a web.
+
+31. Say about the statement “APEX a RAD Tool”?
+Answer: As we can see that the APEX is so firmly incorporated into the database, we would prototype screens while sitting with the client. The Object Browser helps in 
+enabling us to make database questions, for example, tables not with standing seeing those same articles. This allows us to make protests on the fly and after that construct tables 
+around those articles.
+
+The IDE, includes the above Table developer and all applications that are kept running inside a browser. Turnaround time is quick. As the APEX is revelatory then we can without 
+much of a stretch roll out improvements progressively by means of the implicit wizards.
+
+Since APEX controls the session data for all of us and because we utilize the security structure incorporated with the Oracle Database, we would concentrate deliver the applications, 
+not on association setup and another typical advancement time wasters.
+
+32. What are a couple of limitations (points to recall) of Savepoint or Transaction Control in Apex?
+Answer:
+
+● The limitation is each savepoint that we set against governor limit for DML proclamations.
+● Static variables are not returned amid a rollback. If we attempt to run the trigger once more, the static variables hold the qualities from the main run.
+● Each rollback helps in the representation of a mark against governor limit for DML articulations. We will get a Runtime mistake if we are attempting to rollback the 
+extraordinary database circumstances.
+● The ID on a sObject embedded subsequent for setting a savepoint isn’t getting cleared after a rollback.
+
+33. What is the present version of APEX and for what reason would it be a good idea for me to update?
+Answer: The Beta version APEX 4.2 is available in the market a few weeks back. This new form of the APEX 4.2 offers various upgrades. The most helpful are as follows:
+● Print to PDF – The users are able to send out their reports and screens to PDF yield.
+● Migrate from MS-Access – By making use of the export tool and the Access Migration Workbench, the user can relocate client applications to APEX.
+● Calendar Widget – The older forms of the APEX had a date-book gadget yet now clients are able to pick between day, week or month date-books.
+● Improved Page and Region Caches – As the caching enhances the execution.
+● Application Builder Defaults – The engineer can set defaults for wizards for diminishing improvement time (fundamental themes for development). The advantages for 
+updating the incorporate execution upgrades and extra usability features for both the designer and the end client.
+
+34. By what method would we be able to hard delete a record utilizing an Apex class/by code?
+Answer: ALL ROWS keywords can be utilized for getting every one of the records incorporating in the recycle bin.
+
+35. How might we refer to a present page id in Apex?
+Answer: If we want to recover or refer a required ID in the Visualforce page at that point, we can simply refer to it by making use of a standard controller.
+
+36. Difference Between Trigger.new And Trigger.old In Apex?
+Answer: Trigger.new:
+● This command is used for returning the list of the new forms of object records.
+● We should keep in mind that the sObject list is only accessible in updating and deleting the triggers.
+●  Trigger.new is the command which is accessible before and after inserting, before and after the updating.
+●  In Trigger.new the records must be changed in before the triggers.
+
+Trigger.old:
+●  This command is used for returning the list of old variants of the sObject records.
+●  We should keep in mind that the sObject list is only available in deleting and updating triggers.
+●  Trigger.old is the command that is accessible after inserting, after the update, before deleting and after updating.
+
+37. What is the distinction amongst public and Global class in Apex?
+Answer: The Public access modifier is the modifier which is usually not the same as general modifier in Java. The public class can be accessible inside an application or namespace. 
+While the Global class can be mainly noticed wherever: in any of the application or the namespace. The Webservice must be proclaimed as the Global so that it can have the access outside of the application. The global variable is like the open modifier in Java programming language.
+
+38. What is Apex Scheduler?
+Answer: It is the essential feature that we utilize just for the invoking of the Apex classes to enable them to keep running at unequivocal circumstances, to start with, 
+execute the Schedulable assemblage for the class, at that point expressing the calendar by making use either the Schedule Apex page or the System.
+
+39. What is Apex Interface?
+Answer: An interface is a group of unimplemented strategies. It will indicate the signature of the strategy, kinds of inputs that we pass the techniques for determining what 
+composing is given as a yield.
+
+40. What do you mean Apex?
+Answer: Apex is defined as the mainly in-house technology which is just like Java programming with object-oriented ideas and for composing our own particular custom logic.
+1. Apex is the procedural scripting language in the discrete and executed by the Force.com stage.
+2. It runs locally on the Salesforce servers, making it more ground-breaking and quicker than non-server code, for example, JavaScript/AJAX.
+3. It utilizes the syntax that resembles Java.
+4. Apex can be written in triggers that demonstrates like database put away techniques.
+5. Apex enables designers to join business logic to the record spare process.
+6. It has worked in help for unit test creation and execution.
+
+41. What is Scheduler class in Apex? Is it conceivable for us to call the Apex method in javascript code? If yes then clarify?
+Answer: Scheduler class is defined as a class that is usually modified for running the pre-defined interim. The class must be actualizing the schedulable interface and it 
+contains technique named execute().Yes, we can call apex techniques utilizing javascript. We can accomplish this by using the ActionFunction.
+
+42. What is the distinction between apex:pageMessages, apex:pageMessage, apex: Message and apex: Messages?
+Answer: apex:PageMessages: This is the part which shows all the messages which were produced for all the components on the present page, introduced utilizing 
+for the salesforce styling. This will display both salesforce producing the messages and also custom messages which are added to the ApexPages class.
+
+apex: PageMessage is a segment that includes the single message in the page. This is utilized for showing custom message and utilizing the salesforce formatting.
+
+apex:Message: apex: Message is utilized for showing a mistake on just a particular field. It is utilized for enabling developers to handle particular mistakes in the 
+particular area.
+
+apex: Messages is like apex: Message yet it shows all the errors.
+
+43. What is the future of Application Express?
+Answer: As we have seen that the Oracle has made a large commitment to the Application Express. In a very short time, APEX has made it to version 3.0. Every release 
+makes it easier to use and deploy applications. The recent releases have improved the intergration of the APEX with SOA, APEX does not try for competing with the 
+jDeveloper or the Oracle Java stack.
+
+APEX is defined as the glue which can be very helpful in combining various parts of an enterprise solution into a whole. APEX is the tool of choice for creating web-based, database-centric applications. If our business logic is in the database tier then the APEX is the way to go for us. If our logic is in the middle tier or is implemented at the java level then the J2EE may be the better choice for us. APEX take- up had got doubled in the past year and thousands of developers had switch on to the APEX. Numbers like these helps in ensuring a healthy future for APEX.
+
+A recent INFOWORLD ARTICLE contains the following about the future of Application Express:
+
+Application Express helps in enabling the Oracle database users, including those with limited technical skills for creating and managing secure Web applications by making use of only a Web browser. The tool is very efficient and can be used to prototype Web-based applications as well as can run those applications supporting tens to thousands of users.
+
+Currently the Oracle had estimated that around 100,000 developers are using this Application Express on a monthly basis, but the company would likely open up the tool to many more users, Hichwa said. Oracle is particularly interested in those people who are currently using the Microsoft Corp.’s Access database or its Excel spreadsheet or IBM Corp.’s Lotus Notes groupware for developing the Web- based applications.
+
+44. Are there any limitations in using Oracle XE?
+Answer: XE is free but the Oracle is having certain limitations into the product. The first limitation is the memory of it. Oracle Database XE is able to address only 1GB of RAM. This limitation is mainly affects how many users can access the database concurrently and how well it will perform.
+
+The second limitation is that XE will only be using one CPU. XE will be running on a multi -CPU computer but it won’t scale up for using those CPUs. This functionality has a requirement of Oracle Database Standard Edition or Enterprise Edition.
+
+The third limitation is that only a single XE database will be running on any given computer. We also do not need a database for each application. Instead the Oracle make use of the concept of schemas to separate applications. Finally, a 4GB limit is enforced on disk space. 4GB is a huge amount of storage for most applications. You can also use APEX to link to other databases (on other servers) for more storage as needed.
+
+45. Should static files be placed in the database?
+Answer: Application Express applications may be referencing the additional external files such as cascading style sheets (CSS), images and Javascript libraries. These are the images which can either be placed on the file system of the server that runs the web server or when they are uploaded by making use of Application Express’s application builder which can be stored inside the database.
+
+The benefit of managing the files such as images and CSS in the database with the application builder is that they can be easily exported and imported into another Application Express environment or workspace by making use of a browser. However storing the related files in the database is recommended only when we are having relatively few images and when the application is not expected for enduring high request throughput.
+
+When images, CSS and Javascript libraries are getting stored in the database, a database connection is established each time the browser requests one of these files. In a high throughput application this may result in undue and unwanted strain on the database.
+
+46. How do I separate development from production environment?
+Answer: Depending on the requirements for the availability of the application, the size of the user population and other factors we can decide how to divide the development environment from the production environment. For certain applications, it is acceptable for combining the development server with the deployment server as long as the end users understands that sometimes the application is not available.
+
+Other applications may also have the requirement of two (development and production) or even three (development, test and production) servers. In Application Express, applications can be moved from environment to environment by making use of an export and import facility for application definitions.
+
+With one server availability for running the database and Application Express, we can still be able to separate the development version of an application from its production version by making use of the two workspaces accessing separate schemas. In this case one workspace will be used by the developers and the other will be the workspace in which the application is deployed in production.
+
+47. What are DML Commands?
+Answer: Delete, Update, Merge &  Commit are the termed as the DML Commands.
+
+48. What are a couple of Considerations about Trigger?
+Answer: The couple of considerations about Trigger are as follows:
+● The Upsert triggers are fired both before and after the insert or when update triggers as proper.
+● The Merge triggers are fired both.
+● The Field history doesn’t gets recorded until the trigger end. If we question field history in a trigger then we won’t perceive any history for the present transaction.
+● We can also just utilize the webService keyword in the trigger when it is in a technique characterized as offbeat; that is, the point at which the strategy is described with the @future keyword.
+● A trigger is conjured by an insert, update or delete of the recurring event or repeating task which brings about a runtime error when the trigger is brought in bulk from the Force.com API.
+● The Merge trigger isn’t able to fire their own trigger rather they fire update or delete of losing and winning records individually.
+
+49. Differentiate between Ajax and ActionPoller?
+Answer: ActionPoller is a clock in Apex that helps in empowering an AJAX refresh demand to be sent to the server as told by a period between the times that the software developer decides.
+
+50. What is outputLink?
+Answer: It is defined as mainly a connection with URL. This part is rendered in HTML as anchor tag with a href property. The body of the OutputLink is content which shows the connection.
+
+51. What is the utilization of interfaces?
+Answer: An interface takes up after a class in which none of the strategies have been executed—the system marks have also been there, yet the body of each methodology is void. To use an interface, another class must be realizing it by giving a body to most of the procedures contained in the interface.
+
+Interfaces are able to give a layer of reflection to your code. They help in isolating specific execution of a system from the declaration for that procedure. In this manner, we can be having unmistakable use of a methodology in perspective of our particular application.
