@@ -1,3 +1,12 @@
+50 varchar2 fields
+5 number fields
+1 clob
+1 blob
+1 xmltype
+5 number 
+md5_original => to store checksum. for security purpose
+
+
 Apex_collection.collection_exists("Collection");
 
 APEX_COLLECTION.CREATE_COLLECTION(
@@ -20,6 +29,9 @@ APEX_COLLECTION.CREATE_COLLECTION_FROM_QUERY_B (
     p_max_row_count      IN NUMBER default null,
     p_truncate_if_exists IN VARCHAR2 default 'NO');
 
+APEX_COLLECTION.TRUNCATE_COLLECTION(p_collection_name    =>  VARCHAR2);
+
+APEX_COLLECTION.DELETE_COLLECTION(p_collection_name    =>  VARCHAR2,
 
 CREATE_COLLECTION_FROM_QUERYB2 Procedure
 ==========================================
@@ -32,11 +44,19 @@ APEX_COLLECTION.CREATE_COLLECTION_FROM_QUERYB2 (
     p_max_row_count      IN NUMBER default null,
     p_truncate_if_exists IN VARCHAR2 default 'NO');
 
-
 Apex_collection.add_member("Collection_name");
 
 APEX_COLLECTION.DELETE_MEMBER (p_collection_name IN VARCHAR2,
     p_seq IN VARCHAR2);
 
+Begin
+    APEX_COLLECTION.DELETE_COLLECTION(
+        p_collection_name => 'QUERY_COLLECTION');
+End;
 
-select * from apex_collections where collection_name = 'collection_name' => collectuion nane should be upper case
+select * from apex_collections where collection_name = 'collection_name' => collection nane should be upper case
+
+We can view the collection using session state also.
+
+
+
