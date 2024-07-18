@@ -12,3 +12,207 @@ SQL query
 Shared components
 Function body returning SQL query
 Static values
+
+
+Sending an email in Oracle APEX can be achieved using the built-in PL/SQL packages provided by Oracle. The most common package used for this purpose is `UTL_SMTP` for older versions or `APEX_MAIL` for APEX-specific mail functionalities. Here, we'll focus on using `APEX_MAIL` which simplifies the process and integrates well with APEX applications.
+
+### Steps to Send an Email in Oracle APEX
+
+1. **Enable Oracle APEX Mail**:
+   Ensure that APEX Mail is configured and enabled in your APEX instance. This involves setting up the SMTP server details in the APEX instance settings.
+
+2. **Grant Necessary Privileges**:
+   Ensure that the APEX schema has the necessary privileges to send emails.
+
+3. **Create a PL/SQL Process to Send Email**:
+   You can create a PL/SQL process in your application to send an email. This process can be triggered by a button click, a page submission, or any other event.
+
+Here is an example of how to send an email using `APEX_MAIL`:
+
+### Example: Sending an Email using APEX_MAIL
+
+1. **Configure SMTP Settings**:
+   - Navigate to the APEX workspace administration.
+   - Go to `Manage Instance` -> `Instance Settings` -> `Email`.
+   - Set the SMTP Host Address, Port, Username, and Password.
+
+2. **Grant APEX_MAIL Privileges**:
+   - Ensure that the `APEX_PUBLIC_USER` has the necessary privileges.
+   ```sql
+   BEGIN
+      APEX_INSTANCE_ADMIN.set_parameter('SMTP_HOST_ADDRESS', 'smtp.example.com');
+      APEX_INSTANCE_ADMIN.set_parameter('SMTP_HOST_PORT', '25'); -- or 465/587 for TLS/SSL
+   END;
+   ```
+
+3. **Create a PL/SQL Process in Your Application**:
+   - Go to the page where you want to send the email from.
+   - Under `Processing`, add a new `Process`.
+   - Select `PL/SQL` as the process type.
+
+4. **Add the Following PL/SQL Code**:
+   ```sql
+   DECLARE
+      l_body    VARCHAR2(4000);
+   BEGIN
+      -- Set the email content
+      l_body := 'Dear User,' || CHR(10) ||
+                'This is a test email from Oracle APEX.' || CHR(10) ||
+                'Best regards,' || CHR(10) ||
+                'Your APEX Application';
+
+      -- Send the email
+      APEX_MAIL.SEND(
+         p_to       => 'recipient@example.com',
+         p_from     => 'your-email@example.com',
+         p_subj     => 'Test Email from Oracle APEX',
+         p_body     => l_body
+      );
+
+      -- Commit to ensure the email is sent
+      COMMIT;
+   END;
+   ```
+
+### Detailed Explanation of the Code:
+
+- **l_body**: This variable holds the body of the email.
+- **APEX_MAIL.SEND**:
+  - **p_to**: The recipient's email address.
+  - **p_from**: The sender's email address.
+  - **p_subj**: The subject of the email.
+  - **p_body**: The body of the email.
+- **COMMIT**: Ensures that the email is sent by committing the transaction.
+
+### Example with HTML Content
+
+If you need to send an HTML-formatted email, you can use the `p_body_html` parameter:
+
+```sql
+DECLARE
+   l_body_html    VARCHAR2(4000);
+BEGIN
+   -- Set the HTML email content
+   l_body_html := '<p>Dear User,</p>' ||
+                  '<p>This is a <b>test email</b> from Oracle APEX.</p>' ||
+                  '<p>Best regards,<br>Your APEX Application</p>';
+
+   -- Send the email
+   APEX_MAIL.SEND(
+      p_to       => 'recipient@example.com',
+      p_from     => 'your-email@example.com',
+      p_subj     => 'Test Email from Oracle APEX',
+      p_body_html => l_body_html
+   );
+
+   -- Commit to ensure the email is sent
+   COMMIT;
+END;
+```
+
+### Additional Features
+
+- **Attachments**: You can attach files to your email using the `p_attachment` parameter.
+- **Multiple Recipients**: You can send to multiple recipients by separating their email addresses with a comma.
+- **Logging**: You can log email details for troubleshooting by querying the `APEX_MAIL_LOG` and `APEX_MAIL_QUEUE` views.
+
+By following these steps, you can efficiently send emails from your Oracle APEX application, whether for notifications, confirmations, or any other communication needs.
+
+
+`APEX_MAIL.PUSH_QUEUE` is a procedure in Oracle APEX used to send all the emails that are currently in the mail queue. This procedure is typically used to manually push the mail queue when the automated process is not immediately available or when you want to ensure that queued emails are sent right away.
+
+### When to Use `APEX_MAIL.PUSH_QUEUE`
+
+1. **Immediate Email Delivery**:
+   - If you want emails to be sent out immediately after queuing them, you can call `APEX_MAIL.PUSH_QUEUE` in your PL/SQL process.
+  
+2. **Testing and Debugging**:
+   - During development or troubleshooting, you might want to manually trigger the email queue to ensure that your email-sending logic is working as expected.
+
+### How to Use `APEX_MAIL.PUSH_QUEUE`
+
+Here's how you can use `APEX_MAIL.PUSH_QUEUE` in a PL/SQL block:
+
+1. **Sending an Email and Immediately Pushing the Queue**
+
+Here's an example of sending an email and then immediately pushing the queue to ensure the email is sent right away:
+
+```sql
+BEGIN
+   -- Send an email
+   APEX_MAIL.SEND(
+      p_to       => 'recipient@example.com',
+      p_from     => 'your-email@example.com',
+      p_subj     => 'Test Email from Oracle APEX',
+      p_body     => 'This is a test email from Oracle APEX.'
+   );
+
+   -- Commit to ensure the email is queued
+   COMMIT;
+
+   -- Push the email queue to send the email immediately
+   APEX_MAIL.PUSH_QUEUE;
+END;
+```
+
+### Detailed Explanation of the Code:
+
+- **APEX_MAIL.SEND**:
+  - **p_to**: The recipient's email address.
+  - **p_from**: The sender's email address.
+  - **p_subj**: The subject of the email.
+  - **p_body**: The body of the email.
+
+- **COMMIT**: Ensures that the email is added to the mail queue.
+
+- **APEX_MAIL.PUSH_QUEUE**: Sends all emails that are currently in the mail queue.
+
+### Example with a PL/SQL Process in an APEX Page
+
+If you want to integrate this logic into an APEX page process:
+
+1. **Navigate to the Page**:
+   - Go to the page in your APEX application where you want to send the email.
+
+2. **Create a New Process**:
+   - Under `Processing`, add a new `Process`.
+   - Select `PL/SQL` as the process type.
+
+3. **Add the PL/SQL Code**:
+   ```sql
+   DECLARE
+      l_body VARCHAR2(4000);
+   BEGIN
+      -- Set the email content
+      l_body := 'Dear User,' || CHR(10) ||
+                'This is a test email from Oracle APEX.' || CHR(10) ||
+                'Best regards,' || CHR(10) ||
+                'Your APEX Application';
+
+      -- Send the email
+      APEX_MAIL.SEND(
+         p_to       => 'recipient@example.com',
+         p_from     => 'your-email@example.com',
+         p_subj     => 'Test Email from Oracle APEX',
+         p_body     => l_body
+      );
+
+      -- Commit to ensure the email is queued
+      COMMIT;
+
+      -- Push the email queue to send the email immediately
+      APEX_MAIL.PUSH_QUEUE;
+   END;
+   ```
+
+This code ensures that the email is sent as soon as it is queued, providing immediate delivery. 
+
+### Considerations
+
+- **Automated Queue Processing**:
+  - In a production environment, it's generally recommended to rely on the built-in APEX email queue processing rather than manually pushing the queue frequently. The automated process typically runs at regular intervals to send out emails in the queue.
+
+- **Performance**:
+  - Manually pushing the email queue frequently could impact the performance of your application, especially if there are many emails to be sent.
+
+By using `APEX_MAIL.PUSH_QUEUE`, you gain control over when emails are sent from your APEX application, allowing for immediate email delivery when needed.
