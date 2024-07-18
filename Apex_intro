@@ -1,6 +1,7 @@
-Oracle Apex is a low code developmment tool
+Oracle Apex is a world's most popular low code developmment tool.
 Single database will have multiple workspace and can access across the workspace
-
+Is a 3 tier architecture. 
+ Browser (https://) => Mid Tier (ORDS(Apache server, web services)) => Database Tier (APEX)
 ===============================
 1. What is Oracle Apex?
 Answer: Oracle Apex is a free web development tool. Apex runs on PL/SQL inside the web browser. 
