@@ -1,0 +1,42 @@
+Apex_collection.collection_exists("Collection");
+
+APEX_COLLECTION.CREATE_COLLECTION(
+    p_collection_name    IN VARCHAR2,
+    p_truncate_if_exists IN VARCHAR2 default 'NO');
+APEX_COLLECTION.CREATE_OR_TRUNCATE_COLLECTION(
+    p_collection_name IN VARCHAR2);
+APEX_COLLECTION.CREATE_COLLECTION_FROM_QUERY (
+    p_collection_name    IN VARCHAR2,
+    p_query              IN VARCHAR2,
+    p_generate_md5       IN VARCHAR2 default 'NO',
+    p_truncate_if_exists IN VARCHAR2 default 'NO');
+
+--- Using bulk operation
+APEX_COLLECTION.CREATE_COLLECTION_FROM_QUERY_B (
+    p_collection_name    IN VARCHAR2,
+    p_query              IN VARCHAR2,
+    p_names IN apex_application_global.vc_arr2,
+    p_values IN apex_application_global.vc_arr2,
+    p_max_row_count      IN NUMBER default null,
+    p_truncate_if_exists IN VARCHAR2 default 'NO');
+
+
+CREATE_COLLECTION_FROM_QUERYB2 Procedure
+==========================================
+Use this procedure to create a collection from a supplied query using bulk operations
+APEX_COLLECTION.CREATE_COLLECTION_FROM_QUERYB2 (
+    p_collection_name    IN VARCHAR2,
+    p_query              IN VARCHAR2,
+    p_names IN apex_application_global.vc_arr2,
+    p_values IN apex_application_global.vc_arr2,
+    p_max_row_count      IN NUMBER default null,
+    p_truncate_if_exists IN VARCHAR2 default 'NO');
+
+
+Apex_collection.add_member("Collection_name");
+
+APEX_COLLECTION.DELETE_MEMBER (p_collection_name IN VARCHAR2,
+    p_seq IN VARCHAR2);
+
+
+select * from apex_collections where collection_name = 'collection_name' => collectuion nane should be upper case
