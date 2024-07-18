@@ -1,0 +1,22 @@
+What is Authentication?
+Authentication in Oracle Application Express (APEX) is the process of verifying the identity of a user 
+who is attempting to access an APEX application. It ensures that only authorized users can access the application, 
+and it can be configured in several ways to meet various security requirements. Here are the main 
+authentication schemes available in Oracle APEX:
+
+
+What is Authorization?
+In Oracle Application Express (APEX), authorization schemes are used to control user access to 
+various components within an application, such as pages, regions, items, and buttons. 
+Authorization schemes are a key part of the security framework in APEX. Here are the main types of authorization 
+schemes you can implement in Oracle APEX:
+
+Authorization scheme types:
+1. Exists SQL Query
+2. Is in Role or Group
+3. Is not in Role or Group
+4. Item in expression 1 is null
+5. Item in Expression 1 is Not null
+6. Not exists sql query
+7. PL/SQL Function returning Boolean
+8. Value of Item in Expression1 does not equal expression2
