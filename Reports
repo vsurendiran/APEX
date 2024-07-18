@@ -1,0 +1,55 @@
+Oracle Application Express (APEX) offers several types of reports that can be used to display data to end users in various formats. 
+These reports are versatile and can be customized to meet different business requirements. Here are the main types of reports 
+available in Oracle APEX:
+
+### 1. Classic Report
+- **Description**: The Classic Report is the most basic type of report in APEX. It displays data in a simple tabular format.
+- **Features**: Pagination, sorting, column formatting, and basic filtering.
+- **Use Cases**: Suitable for simple data listings and scenarios where advanced features are not required.
+
+### 2. Interactive Report
+- **Description**: The Interactive Report provides powerful data interaction capabilities, allowing end users to customize the report view according to their needs.
+- **Features**: Filtering, sorting, grouping, aggregations, pivoting, column selection, and chart integration.
+- **Use Cases**: Ideal for ad-hoc reporting, analysis, and scenarios where users need to manipulate data views dynamically.
+
+### 3. Interactive Grid
+- **Description**: The Interactive Grid combines the features of an interactive report with inline editing capabilities.
+- **Features**: Inline editing, filtering, sorting, aggregations, data visualization, and extensive customization options.
+- **Use Cases**: Useful for scenarios requiring both reporting and data entry or editing within the same interface.
+
+### 4. Faceted Search Report
+- **Description**: The Faceted Search Report allows users to filter data dynamically using facets (categories) on the left side of the screen.
+- **Features**: Faceted navigation, dynamic filtering, interactive charts, and advanced search capabilities.
+- **Use Cases**: Suitable for large datasets where users need to quickly narrow down search results based on multiple criteria.
+
+### 5. Cards Report
+- **Description**: The Cards Report displays data in a card layout, which is visually appealing and suitable for displaying detailed information about each record.
+- **Features**: Customizable card layouts, responsive design, and integration with other report types.
+- **Use Cases**: Ideal for displaying profile-like information, product catalogs, or any scenario where a card layout enhances the user experience.
+
+### 6. Calendar Report
+- **Description**: The Calendar Report displays data in a calendar format, making it suitable for scheduling and event management applications.
+- **Features**: Monthly, weekly, and daily views, event creation, drag-and-drop functionality, and integration with other components.
+- **Use Cases**: Useful for applications that require scheduling, event tracking, or displaying time-based data.
+
+### 7. Chart Report
+- **Description**: The Chart Report visualizes data using various chart types such as bar, line, pie, and more.
+- **Features**: Multiple chart types, customization options, drill-down capabilities, and dynamic data interaction.
+- **Use Cases**: Suitable for data visualization, dashboards, and scenarios where graphical representation of data is needed.
+
+### 8. Report with Form
+- **Description**: This type of report combines a data report with an associated form, allowing users to view and edit data within the same interface.
+- **Features**: Inline editing, data validation, and seamless navigation between the report and the form.
+- **Use Cases**: Useful for applications requiring both data display and editing capabilities, such as master-detail interfaces.
+
+### 9. Classic Report with Web Source
+- **Description**: Similar to a classic report but retrieves data from web sources like RESTful web services.
+- **Features**: Integration with external data sources, dynamic data fetching, and similar customization options as the classic report.
+- **Use Cases**: Suitable for applications that need to integrate and display data from external APIs or web services.
+
+### 10. Plug-ins and Custom Reports
+- **Description**: APEX supports third-party plug-ins that can be used to create custom report types tailored to specific requirements.
+- **Features**: Extensibility, integration with custom code, and the ability to create unique data presentation formats.
+- **Use Cases**: Useful for scenarios where built-in report types do not meet specific business needs, allowing for highly customized reporting solutions.
+
+Each type of report in Oracle APEX serves different purposes and can be tailored to meet various business requirements, providing a comprehensive suite of tools for data presentation and interaction.
