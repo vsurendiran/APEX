@@ -1,0 +1,6 @@
+Adding javascripts to APEX apps
+
+1. Dynamic actions
+2. Dynamic Actions with Javascipt hooks
+3. Page and component level attributes
+4. static files
