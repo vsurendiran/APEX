@@ -10,7 +10,7 @@ available in Oracle APEX:
 ### 2. Interactive Report
 - **Description**: The Interactive Report provides powerful data interaction capabilities, allowing end users to customize the report 
     view according to their needs.
-- **Features**: Filtering, sorting, grouping, aggregations, pivoting, column selection, and chart integration.
+- **Features**: Filtering, sorting, grouping, aggregations, formating, pivoting, column selection, and chart integration.
 - **Use Cases**: Ideal for ad-hoc reporting, analysis, and scenarios where users need to manipulate data views dynamically.
 
 ### 3. Interactive Grid
