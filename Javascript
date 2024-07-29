@@ -7,3 +7,6 @@ Adding javascripts to APEX apps
 
 Example for Salary < 1000 change color
 https://www.youtube.com/watch?v=XbReCr9q2RA
+
+Classic Report
+https://www.youtube.com/watch?v=H9-1bJ_0d1U
